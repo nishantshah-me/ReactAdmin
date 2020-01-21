@@ -25,13 +25,14 @@ import { CustomTooltips } from "@coreui/coreui-plugin-chartjs-custom-tooltips";
 import { getStyle, hexToRgba } from "@coreui/coreui/dist/js/coreui-utilities";
 
 function Tile(props) {
+  console.log(props);
   return (
     <div>
-      <Col xs="12" sm="6" lg="3">
-        <Card className="text-white bg-warning">
+      <Col xs="12" sm="20" lg="200">
+        <Card className={"text-white " + props.bgColor}>
           <CardBody className="pb-0">
-            <div className="text-value">9.823</div>
-            <div>Members online</div>
+            <div className="text-value">{props.value}</div>
+            <div>{props.title}</div>
           </CardBody>
           <div className="chart-wrapper" style={{ height: "70px" }}>
             <Line data={cardChartData3} options={cardChartOpts3} height={70} />
